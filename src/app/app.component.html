@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="city__search_section" >
+  <div class="select_serch_area">
+    <select #c class="" name="" (change)="search(c.value)">
+      <option value="BENGALURU">Bengaluru</option>
+      <option value="MUMBAI">Mumbai</option>
+      <option value="HYDERABAD">Hyderabad</option>
+      <option value="PUNE">Pune</option>
+      <option value="DELHI">Delhi</option>
+    </select>
+
+    <div class="Search_box">
+      <input #txt type="text" name="" value="" (input)="search(txt.value)" placeholder="Serach City">
+    </div>
+  </div>
+
+  <div class="search_results_table">
+    <table class="table table-striped">
+      <tr>
+        <th>Bank Name</th>
+        <th>Branch</th>
+        <th>City</th>
+        <th>Ifsc</th>
+        <th>State</th>
+        <th>Address</th>
+      </tr>
+      <tr *ngFor= "let list of listOfData" >
+        <td>{{list.bank_name}}</td>
+        <td>{{list.branch}}</td>
+        <td>{{list.city}}</td>
+        <td>{{list.ifsc}}</td>
+        <td>{{list.state}}</td>
+        <td>{{list.address}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
